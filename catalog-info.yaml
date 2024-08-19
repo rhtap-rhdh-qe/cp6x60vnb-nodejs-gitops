@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cp6x60vnb-nodejs-gitops
+  description: This is GitOps manifest for cp6x60vnb-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: cp6x60vnb-nodejs
+    janus-idp.io/tekton: cp6x60vnb-nodejs
+    backstage.io/kubernetes-id: cp6x60vnb-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cp6x60vnb-nodejs
